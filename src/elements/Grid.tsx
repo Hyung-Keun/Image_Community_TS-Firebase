@@ -1,8 +1,9 @@
 import React from "react";
+
 import styled from "styled-components";
 
 interface IGrid {
-  is_flex?: string;
+  is_flex?: string | boolean;
   width?: string;
   margin?: string;
   padding?: string;

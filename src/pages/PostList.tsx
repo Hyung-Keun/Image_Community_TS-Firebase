@@ -1,6 +1,11 @@
+import Post from "../components/Post";
 import React from "react";
 
 const PostList = () => {
-  return <React.Fragment>postlist</React.Fragment>;
+  return (
+    <React.Fragment>
+      <Post />
+    </React.Fragment>
+  );
 };
 export default PostList;
