@@ -1,10 +1,12 @@
 import React from "react";
+
 import styled from "styled-components";
 
 interface IText {
   bold?: boolean;
   color?: string;
   size?: string;
+  margin?: string;
   children: React.ReactNode;
 }
 const P = styled.p<IText>`
