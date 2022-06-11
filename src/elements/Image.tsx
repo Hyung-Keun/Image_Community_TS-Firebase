@@ -1,4 +1,5 @@
 import React from "react";
+
 import styled from "styled-components";
 
 interface IImage {
@@ -21,7 +22,7 @@ const AspectInner = styled.div<IImage>`
 `;
 
 const ImageCircle = styled.div<IImage>`
-  --size: ${(props) => props.size}px;
+  --size: ${(props) => props.size};
   width: var(--size);
   height: var(--size);
   border-radius: var(--size);

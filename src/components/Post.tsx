@@ -9,6 +9,7 @@ const Post = () => {
         <Grid is_flex>
           <Image
             shape="circle"
+            size="80px"
             src={Post.defaultProps.user_info.user_profile}
           />
           <Text bold>{Post.defaultProps.user_info.user_name}</Text>
@@ -30,13 +31,13 @@ const Post = () => {
 
 Post.defaultProps = {
   user_info: {
-    user_name: "defaultName",
+    user_name: "Coton-de-Tulear",
     user_profile:
-      "https://images.mypetlife.co.kr/content/uploads/2018/03/09161124/file_23230_coton-de-tulear.jpg",
+      "https://media.newyorker.com/photos/5909713e019dfc3494ea2275/16:9/w_1280,c_limit/Rothman-Was-Jobs-an-Artist.jpg",
   },
   image_url:
     "https://images.mypetlife.co.kr/content/uploads/2018/03/09161124/file_23230_coton-de-tulear.jpg",
-  contents: "꼬똥 드 툴레아!",
+  contents: "Coton-de-Tulear!",
   comment_cnt: 10,
   insert_dt: "2022-06-11 10:00:00",
 };
