@@ -20,11 +20,7 @@ const Button = ({
   text,
   onClick,
 }: IButton<HTMLButtonElement & HTMLInputElement>) => {
-  return (
-    <React.Fragment>
-      <ElButton onClick={onClick}>{text}</ElButton>
-    </React.Fragment>
-  );
+  return <ElButton onClick={onClick}>{text}</ElButton>;
 };
 
 export default Button;

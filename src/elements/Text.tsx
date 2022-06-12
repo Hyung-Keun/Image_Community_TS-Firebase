@@ -17,7 +17,7 @@ const P = styled.p<IText>`
 
 const Text = ({ bold, color, size, children }: IText) => {
   const styles = { bold, color, size };
-  return <React.Fragment {...styles}>{children}</React.Fragment>;
+  return <P {...styles}>{children}</P>;
 };
 
 export default Text;
