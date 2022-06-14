@@ -5,12 +5,15 @@ import Login from "@pages/Login";
 import PostList from "@pages/Login";
 import Signup from "@pages/Signup";
 
+import Header from "@components/Header";
+
 import { Grid } from "../elements/index";
 
 function App() {
   return (
     <React.Fragment>
       <Grid>
+        <Header />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<PostList />} />

@@ -9,6 +9,7 @@ interface IInput<T> {
   label?: string;
   placeholder?: string;
   onChange?: React.ChangeEventHandler<T>;
+  value?: string;
 }
 
 const ElInput = styled.input`
@@ -23,12 +24,13 @@ const Input = ({
   label,
   placeholder,
   onChange,
+  value,
 }: IInput<HTMLButtonElement & HTMLInputElement>) => {
   return (
     <React.Fragment>
       <Grid>
-        <Text margin="0px">{label}</Text>
-        <ElInput placeholder={placeholder} onChange={onChange} />
+        <Text margin={margin}>{label}</Text>
+        <ElInput value={value} placeholder={placeholder} onChange={onChange} />
       </Grid>
     </React.Fragment>
   );
