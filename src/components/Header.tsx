@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { getCookie, deleteCookie } from "@shared/Cookie";
 
@@ -6,6 +6,17 @@ import { Grid, Text, Button } from "@elements";
 
 const Header = () => {
   const [is_login, setIsLogin] = React.useState(false);
+
+  React.useEffect(() => {
+    const cookie = getCookie("user_id");
+    console.log(cookie);
+    if (cookie) {
+      setIsLogin(true);
+    } else {
+      setIsLogin(false);
+    }
+  }, []);
+
   if (is_login) {
     return (
       <React.Fragment>
@@ -19,7 +30,12 @@ const Header = () => {
           <Grid is_flex>
             <Button text="내정보"></Button>
             <Button text="알림"></Button>
-            <Button text="로그아웃"></Button>
+            <Button
+              text="로그아웃"
+              onClick={() => {
+                deleteCookie("user_id");
+              }}
+            ></Button>
           </Grid>
         </Grid>
       </React.Fragment>
