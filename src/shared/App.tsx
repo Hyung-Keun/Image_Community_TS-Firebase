@@ -9,18 +9,22 @@ import Header from "@components/Header";
 
 import { Grid } from "../elements/index";
 
+import UserInfoContextProvider from "@contexts/UserInfoContext";
+
 function App() {
   return (
     <React.Fragment>
       <Grid>
-        <Header />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<PostList />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-          </Routes>
-        </BrowserRouter>
+        <UserInfoContextProvider>
+          <Header />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<PostList />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+            </Routes>
+          </BrowserRouter>
+        </UserInfoContextProvider>
       </Grid>
     </React.Fragment>
   );

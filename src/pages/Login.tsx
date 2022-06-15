@@ -1,21 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { getCookie, setCookie, deleteCookie } from "@shared/Cookie";
 
 import { Text, Input, Grid, Button } from "../elements/index";
 
+import { UserInfoContext } from "@contexts/UserInfoContext";
+
 const Login = () => {
   const [id, setId] = React.useState("");
   const [pwd, setPwd] = React.useState("");
+  const userInfoContext = useContext(UserInfoContext);
 
-  const changeId: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+  const onChangeId: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     console.log(event.target.value);
-    setId(event.target.value);
+    userInfoContext?.setUser(event.target.value);
   };
+  console.log(userInfoContext?.user);
 
-  const changePwd: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+  const onChangePwd: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     console.log(event.target.value);
-    setPwd(event.target.value);
   };
 
   const login = () => {
@@ -33,9 +36,8 @@ const Login = () => {
         <Grid padding="16px 0px">
           <Input
             label="아이디"
-            value={id}
             placeholder="아이디를 입력해주세요."
-            onChange={changeId}
+            onChange={onChangeId}
           />
         </Grid>
 
@@ -44,7 +46,7 @@ const Login = () => {
             label="패스워드"
             value={pwd}
             placeholder="패스워드 입력해주세요."
-            onChange={changePwd}
+            onChange={onChangePwd}
           />
         </Grid>
 
