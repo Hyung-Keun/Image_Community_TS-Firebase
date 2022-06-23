@@ -10,7 +10,8 @@
       "@redux/*": ["redux/*"],
       "@shared/*": ["shared/*"],
       "@type/*": ["@type/*"],
-      "@utils/*": ["utils/*"]
+      "@utils/*": ["utils/*"],
+      "@contexts/*": ["contexts/*"]
     }
   }
 }
