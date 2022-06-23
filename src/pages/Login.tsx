@@ -7,8 +7,8 @@ import { Text, Input, Grid, Button } from "../elements/index";
 import { UserInfoContext } from "@contexts/UserInfoContext";
 
 const Login = () => {
-  const [id, setId] = React.useState("");
-  const [pwd, setPwd] = React.useState("");
+  // const [id, setId] = React.useState("");
+  // const [pwd, setPwd] = React.useState("");
   const userInfoContext = useContext(UserInfoContext);
 
   const onChangeId: React.ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -19,8 +19,9 @@ const Login = () => {
 
   const onChangePwd: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     console.log(event.target.value);
+    userInfoContext?.setPwd(event.target.value);
   };
-
+  console.log(userInfoContext?.pwd);
   const login = () => {
     setCookie("user_id", "dog", 3);
     setCookie("user_pwd", "cat", 3);
@@ -44,7 +45,6 @@ const Login = () => {
         <Grid padding="16px 0px">
           <Input
             label="패스워드"
-            value={pwd}
             placeholder="패스워드 입력해주세요."
             onChange={onChangePwd}
           />
